@@ -3,27 +3,23 @@
 /**
  * Module dependencies.
  */
-var mongoose = require('mongoose'),
-	Schema = mongoose.Schema;
+var bookshelf = require('../config/db').bookshelf,
+	checkit = require('checkit'),
+	util = require('util');
 
-/**
- * <%= humanizedSingularName %> Schema
- */
-var <%= classifiedSingularName %>Schema = new Schema({
-	name: {
-		type: String,
-		default: '',
-		required: 'Please fill <%= humanizedSingularName %> name',
-		trim: true
+
+var <%= classifiedSingularName => = bookshelf.Model.extend({
+	tableName: '<% = camelizedPluralName =>',
+
+	initialize: function() {
+		this.on('saving', this.validateSave);
 	},
-	created: {
-		type: Date,
-		default: Date.now
+
+	validateSave: function() {
+		//return checkit(this.rules).run(this.attributes);
+		return true;
 	},
-	user: {
-		type: Schema.ObjectId,
-		ref: 'User'
-	}
+
 });
 
-mongoose.model('<%= classifiedSingularName %>', <%= classifiedSingularName %>Schema);
+module.exports = <%= classifiedSingularName =>;

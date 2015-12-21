@@ -1,24 +1,20 @@
 'use strict';
 
 //Setting up route
-angular.module('<%= slugifiedPluralName %>').config(['$stateProvider',
-	function($stateProvider) {
+angular.module('<%= slugifiedPluralName %>').config(['$routeProvider',
+	function($routeProvider) {
 		// <%= humanizedPluralName %> state routing
 		$stateProvider.
-		state('list<%= classifiedPluralName %>', {
-			url: '/<%= slugifiedPluralName %>',
+		when('list<%= classifiedPluralName %>', {
 			templateUrl: 'modules/<%= slugifiedPluralName %>/views/list-<%= slugifiedPluralName %>.client.view.html'
 		}).
-		state('create<%= classifiedSingularName %>', {
-			url: '/<%= slugifiedPluralName %>/create',
+		when('create<%= classifiedSingularName %>', {
 			templateUrl: 'modules/<%= slugifiedPluralName %>/views/create-<%= slugifiedSingularName %>.client.view.html'
 		}).
-		state('view<%= classifiedSingularName %>', {
-			url: '/<%= slugifiedPluralName %>/:<%= camelizedSingularName %>Id',
+		when('view<%= classifiedSingularName %>', {
 			templateUrl: 'modules/<%= slugifiedPluralName %>/views/view-<%= slugifiedSingularName %>.client.view.html'
 		}).
-		state('edit<%= classifiedSingularName %>', {
-			url: '/<%= slugifiedPluralName %>/:<%= camelizedSingularName %>Id/edit',
+		when('edit<%= classifiedSingularName %>', {
 			templateUrl: 'modules/<%= slugifiedPluralName %>/views/edit-<%= slugifiedSingularName %>.client.view.html'
 		});
 	}
