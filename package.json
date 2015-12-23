@@ -1,13 +1,12 @@
 {
-	"name": "generator-meanjs",
-	"version": "0.1.12",
-	"description": "MEAN.JS Official Yeoman Generator",
+	"name": "generator-beanjs",
+	"version": "0.0.1",
+	"description": "BEAN.JS Official Yeoman Generator",
 	"main": "app/index.js",
-	"repository": "meanjs/generator-meanjs",
+	"repository": "chrisedg87/generator-beanjs",
 	"author": {
-		"name": "MEAN.JS Team",
-		"email": "support@meanjs.org",
-		"url": "https://github.com/meanjs"
+		"name": "Chris Edgington",
+		"url": "https://github.com/chrisedg87"
 	},
 	"engines": {
 		"node": ">=0.10.0"
@@ -23,27 +22,24 @@
 		"front-end",
 		"app",
 		"mean",
-		"meanjs",
+		"beanjs",
 		"node",
 		"express",
 		"angular"
 	],
 	"dependencies": {
-		"yeoman-generator": "~0.17.1",
-		"chalk": "~0.5.1",
-		"underscore.inflections": "~0.2.1"
+		"bluebird": "~3.0.6", 
+    	"chalk": "~1.1.1", 
+		"underscore.string": "~3.2.2", 
+    	"yeoman-generator": "~0.21.1", 
+    	"yo": "~1.5.0" 
+
 	},
-	"devDependencies": {
-		"assert": "~1.1.1",
-		"async": "~0.9.0",
-		"fs-extra": "~0.10.0",
-		"mocha": "~1.21.3",
-		"temp": "~0.8.0"
-	},
-	"peerDependencies": {
-		"yo": ">=1.0.0"
+		"devDependencies": {
+	    "mocha": "~2.3.4",
+	    "temp": "~0.8.3"
 	},
 	"licenses": [{
-		"type": "BSD"
+		"type": "MIT"
 	}]
 }
